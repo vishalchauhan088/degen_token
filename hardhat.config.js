@@ -18,18 +18,18 @@ if (FORK_FUJI) {
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.18",
+  solidity: "0.8.18", // Example solidity version, adjust as per your needs
   networks: {
     hardhat: {
       gasPrice: 225000000000,
-      chainId: !forkingData ? 43112 : undefined, //Only specify a chainId if we are not forking
+      chainId: !forkingData ? 43112 : undefined, // Only specify a chainId if we are not forking
       forking: forkingData,
     },
     fuji: {
       url: "https://api.avax-test.network/ext/bc/C/rpc",
       gasPrice: 225000000000,
       chainId: 43113,
-      accounts: [process.env.WALLET_PRIVATE_KEY], // we use a .env file to hide our wallets private key
+      accounts: [process.env.WALLET_PRIVATE_KEY], // Using a .env file to hide our wallet's private key
     },
     mainnet: {
       url: "https://api.avax.network/ext/bc/C/rpc",
@@ -37,8 +37,5 @@ module.exports = {
       chainId: 43114,
       accounts: [process.env.WALLET_PRIVATE_KEY],
     },
-  },
-  etherscan: {
-    apiKey: process.env.SNOWTRACE_API_KEY, // we use an .env file to hide our Snowtrace API KEY
   },
 };

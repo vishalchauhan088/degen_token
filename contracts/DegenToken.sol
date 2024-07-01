@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
-contract MyToken {
+contract DegenToken {
     string public name = "degen";
     string public symbol = "DGN";
     uint8 public decimals = 18;
